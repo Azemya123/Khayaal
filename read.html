@@ -1,10 +1,9 @@
-DOCTYPEPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=d
-    idth, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Facts &amp; Assumptions — Khayaal</title>
 
   <style>
@@ -29,6 +28,10 @@ DOCTYPEPE html>
     header a {
       color: #c4c9d8;
       text-decoration: none;
+    }
+
+    header a:hover {
+      color: #ffffff;
     }
 
     main {
@@ -105,6 +108,26 @@ DOCTYPEPE html>
       font-family: Arial, sans-serif;
       font-size: 12px;
     }
+
+    @media (max-width: 480px) {
+      main {
+        margin: 35px auto;
+        padding: 0 18px;
+      }
+
+      #chapter-content {
+        font-size: 17px;
+      }
+
+      .navigation {
+        gap: 8px;
+      }
+
+      button {
+        padding: 11px 12px;
+        font-size: 12px;
+      }
+    }
   </style>
 
 </head>
@@ -143,7 +166,7 @@ DOCTYPEPE html>
   <script>
     const chapters = [
       {
-        title: "Chapter 1",
+        title: "The Beginning",
         content: `Varkov, 11 AM
 
 “Missed.”
@@ -254,13 +277,13 @@ What was that?
 
 I take out my phone and message Leo.
 
-Me:Did they interrogate you?
+Me: Did they interrogate you?
 
 Leo: Yeah. Zane too.
 
 They probably interrogated everyone, then. No harm in confirming, though.
 
-Me:Was everyone interrogated?
+Me: Was everyone interrogated?
 
 Zane: You could at least add a greeting at the start.
 
@@ -380,10 +403,11 @@ I nod.
 
 “No clue at all.”
 
-    ];
-        , {
-      title: "9:30 AM",
-      content: `9:30 AM
+Something told me this wasn't going to end with a few questions and a warning from Keith.`
+      },
+      {
+        title: "9:30 AM",
+        content: `9:30 AM
 
 I run into the office in a hurry.
 
@@ -640,7 +664,7 @@ I watch him go.
 General knowledge.
 
 Yeah, I can come up with a better excuse.`
-    }
+      }
     ];
 
     let currentChapter = 0;
