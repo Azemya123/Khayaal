@@ -458,56 +458,11 @@
       Khayaal خیال · Where stories take shape.
     </div>
   </footer>
-
-  <div
-    class="modal"
-    id="bookModal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modalTitle"
-  >
-    <div class="modal-content">
-      <h2 id="modalTitle">The story awaits.</h2>
-
-      <p>
-        The reading pages are still being prepared.
-        Come back soon to begin reading Facts and Assumptions.
-      </p>
-
-      <button class="close-button" id="closeModal">
-        Close
-      </button>
-    </div>
-  </div>
-
-  <script>
-    const modal = document.getElementById("bookModal");
-    const readButton = document.getElementById("readButton");
-    const closeButton = document.getElementById("closeModal");
-
-    readButton.addEventListener("click", () => {
-      modal.classList.add("open");
-      closeButton.focus();
-    });
-
-    closeButton.addEventListener("click", () => {
-      modal.classList.remove("open");
-      readButton.focus();
-    });
-
-    modal.addEventListener("click", event => {
-      if (event.target === modal) {
-        modal.classList.remove("open");
-        readButton.focus();
-      }
-    });
-
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape") {
-        modal.classList.remove("open");
-      }
-    });
-  </script>
+<script>
+  document.getElementById("readButton").addEventListener("click", () => {
+    window.location.href = "read.html";
+  });
+</script>
 
 </body>
 </html>
