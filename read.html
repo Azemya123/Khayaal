@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Facts &amp; Assumptions — Khayaal</title>
 
   <style>
@@ -101,6 +102,18 @@
       background: #25314d;
     }
 
+    .discussion-title {
+      margin-top: 55px;
+      border-top: 1px solid #252d43;
+      padding-top: 30px;
+    }
+
+    .discussion-description {
+      color: #aab5d0;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
@@ -140,27 +153,33 @@
   <main>
     <div class="story-title">Khayaal · Fiction</div>
 
+```
 <h1>Facts &amp; Assumptions</h1>
 
-<p id="chapter-number"></p>
-<h2 id="chapter-title"></h2>
+<p id="chapter-number">CHAPTER 1</p>
 
-<article id="chapter-content"></article>
+<h2 id="chapter-title">The Beginning</h2>
+
+<article id="chapter-content" aria-live="polite">Loading chapter...</article>
 
 <div class="navigation">
-  <button id="previous" onclick="changeChapter(-1)">
+  <button
+    id="previous"
+    onclick="changeChapter(-1)"
+    disabled>
     ← Previous Chapter
   </button>
 
-  <button id="next" onclick="changeChapter(1)">
+  <button
+    id="next"
+    onclick="changeChapter(1)">
     Next Chapter →
   </button>
 </div>
-    <h2 style="margin-top: 55px; border-top: 1px solid #252d43; padding-top: 30px;">
-  Chapter Discussion
-</h2>
 
-<p style="color: #aab5d0; font-family: Arial, sans-serif; font-size: 14px;">
+<h2 class="discussion-title">Chapter Discussion</h2>
+
+<p class="discussion-description">
   Share your thoughts and theories about this chapter.
 </p>
 
@@ -184,6 +203,7 @@
   crossorigin="anonymous"
   async>
 </script>
+```
 
   </main>
 
@@ -193,550 +213,98 @@
     const chapters = [
       {
         title: "The Beginning",
-        content: `Varkov, 11 AM
-
-“Missed.”
-
-“Missed again.”
-
-“And again.”
-
-“And again.”
-
-“And again.”
-
-“Twenty-seven misses now,” Zane announces as I hopelessly attempt to hit the target for what feels like the hundredth time.
-
-Training. Apparently, spies being able to run was important now. Shooting practice came with it.
-
-“It’s a bit too hot today,” I say, lowering my weapon and wiping the sweat off my forehead. “That’s why I can’t focus properly.”
-
-“You say that while wearing a coat,” Zane says.
-
-“It’s pretty thin.”
-
-He gives me a look that says, "I could argue with you, but I won't," and points to the lane beside mine.
-
-Leo.
-
-He joined VIX a few weeks ago.
-
-“Bullseye.”
-
-“Bullseye.”
-
-“Bullseye.”
-
-Zane counts them off with a grin. Annoying.
-
-“He hasn’t missed once.”
-
-Keith approaches us. “You’re good at this,” he says.
-
-Except it looks like he’s saying that to me.
-
-Even Zane looks confused. He points his thumb at me.
-
-“Are you talking about… him?”
-
-Keith nods.
-
-“How? How is Jase good at shooting? He’s missed 27 times. He hasn’t even hit the target board!”
-
-“Yeah,” Keith replies. “When I said this, I meant missing.”
-
-Thanks a lot for boosting my self-esteem.
-
-After a few more rounds of missing, we finally head back inside.
-
-I walk to my office and open the door, only to find a guy sitting at my computer.
-
-I pause.
-
-“Excuse me. This is my office. Table 29.”
-
-He doesn't respond. His fingers move rapidly across the keyboard as he clicks through one window after another.
-
-“Hey, this is my table. You may have misunderstood.”
-
-I make my voice firmer.
-
-That gets his attention.
-
-Finally, he looks at me.
-
-The man appears to be in his late thirties, with curly brown hair and dark eyes.
-
-“Jase Alexander.”
-
-“Uh, yeah. That's my name.”
-
-“Where were you two days ago, on Tuesday, at 6 PM?”
-
-Two days ago?
-
-I don't even remember what I had for dinner yesterday. Though, the answer is probably…
-
-“Home. I was home.”
-
-“Is there anyone who can verify that?” he asks.
-
-His voice is soft, but he seems determined to sound authoritative.
-
-And failing.
-
-“Who are you?” I ask. “Am I the only one being questioned, or is everyone?”
-
-He raises a hand, signalling me to stop.
-
-“I ask the questions, not you.” He pauses. “So tell me, can anyone verify that you were home at six?”
-
-I sigh.
-
-“Yes. My brother, Leo. And our apartment building's CCTV.”
-
-He studies me for a moment, then nods and walks out, slamming the door behind him.
-
-I drop into my chair.
-
-What was that?
-
-I take out my phone and message Leo.
-
-Me: Did they interrogate you?
-
-Leo: Yeah. Zane too.
-
-They probably interrogated everyone, then. No harm in confirming, though.
-
-Me: Was everyone interrogated?
-
-Zane: You could at least add a greeting at the start.
-
-I ignore that.
-
-Zane: Not everyone. Only people in Personnel & Operations.
-
-Interesting.
-
-Personnel & Operations are the only two sectors that can access sensitive information. This isn't something minor.
-
-If they're being investigated, it probably has something to do with information.
-
-Meaning… something's been leaked. It's a good guess, but I can't be sure.
-
-But what?
-
-What was he doing on my computer?
-
-I open it and try to go through the files, but he's closed everything he opened and restarted my computer. So… I can't tell what he was looking for.
-
-My phone rings.
-
-Keith.
-
-“Hello,” I say.
-
-“Jase. Don't start investigating this.”
-
-Great way to start a conversation.
-
-“I was looking at my computer,” I say.
-
-“Mmhmm. Definitely.” He sighs. “Do not jump into this. Leave. It. Alone.”
-
-He hangs up before I can say another word.
-
-He didn't even specify what this was.
-
-I lean back and roll around in my wheely chair.
-
-Hm.
-
-He didn't need to repeat himself.
-
-It's not like I love wasting my time and energy investigating some case. Especially ones I've been told to stay away from.
-
-The next day, 12 PM
-
-I wake up to the smell of something cooking.
-
-Not burning.
-
-That's… new.
-
-I peek into the kitchen and lean against the wall.
-
-“So you've decided to cook pancakes on a daily basis?” I ask.
-
-“Yeah, pretty much. They're easy and delicious,” Leo replies, his light brown eyes fixed on the round goop in the pan.
-
-The goop is what he calls a pancake.
-
-Breakfast.
-
-Lunch.
-
-Dinner.
-
-Pancakes.
-
-Pancakes.
-
-Pancakes.
-
-I'm tired of them.
-
-I'd much rather switch back to cereal and instant noodles, except Leo usually does the food shopping.
-
-He finally takes the last pancake and places it atop the enormous stack of others. He then proceeds to pour syrup on them.
-
-Too much.
-
-So much you'd think it was a syrup fountain, like those chocolate fountains at fancy parties.
-
-He hands me my stack and smiles.
-
-“Enjoy!”
-
-“Uh, yeah, sure…” I mutter.
-
-We sit at the dining table, attempting to finish the pancakes Leo made.
-
-“I have to admit, these are pretty good,” I say as I munch on them.
-
-“Mmhmm. You do have to admit,” Leo replies, covering his pancakes with more syrup.
-
-I stare at him.
-
-“Really? More syrup?”
-
-His focus shifts from the pancakes to me, but only for a split second.
-
-“The pancakes absorbed it,” he says before returning to his food.
-
-I sigh.
-
-“So,” Leo says, “what did you think about the whole interrogation thing?”
-
-I cut a pancake into smaller pieces.
-
-“Not too much. Keith called and told me to stay away from it. It's about some leaked information,” I say.
-
-“Leaked information…” Leo repeats thoughtfully. “No clue what the information is, right?”
-
-I nod.
-
-“No clue at all.”
-
-Something told me this wasn't going to end with a few questions and a warning from Keith.`
+        file: "chapters/chapter-1.txt"
       },
       {
         title: "9:30 AM",
-        content: `9:30 AM
-
-I run into the office in a hurry.
-
-Forty-five minutes late.
-
-I'm a whole forty-five minutes late.
-
-I'm usually fifteen minutes late, but that's different. That's fashionably late.
-
-Today, I'm late by mistake.
-
-“Ack!”
-
-A voice cuts through my thoughts.
-
-I stop and turn around.
-
-A boy stands behind me, looking up at me with a frown. He can't be older than fifteen or sixteen. He's short enough that I hadn't even noticed him in my rush to get inside.
-
-Ah.
-
-I may have bumped into him.
-
-I hurry back.
-
-“Sorry. Are you hurt?”
-
-He frowns.
-
-Okay. I didn't expect a child to respond that way to an apology.
-
-“No, I'm not. But tell me…” He pauses, studying my face. “Why didn't you see me?”
-
-I open my mouth.
-
-Then close it.
-
-The honest answer is probably not going to help.
-
-“Why didn't I see you?” I repeat, buying myself a few seconds.
-
-“Yes.”
-
-He waits.
-
-The way he's looking at me tells me I definitely shouldn't mention his height.
-
-“Because I was—am late. And in a hurry,” I reply gently.
-
-He considers that.
-
-Then he asks, “Would you have seen me if you weren't in a hurry?”
-
-The same expectant look.
-
-I smile.
-
-“Of course I would.”
-
-He seems satisfied with that answer.
-
-“Okay…”
-
-He gives me a small smile and walks away without another word.
-
-I watch him disappear down the corridor.
-
-What's someone his age doing here?
-
-It's not impossible. Leo and I joined VIX around that age, after all.
-
-But it's rare.
-
-I turn back towards my office.
-
-Forty-five minutes late, and I've already managed to run into someone.
-
-Wonderful.
-
-12 PM
-
-Break time.
-
-The office is noisier than usual. Conversations overlap across the room, chairs scrape against the floor, and someone laughs loudly enough to make me look up from my food.
-
-At the moment, most conversations have one thing in common.
-
-Why were we interrogated?
-
-Everyone seems to have a theory.
-
-Unfortunately, most of them are stupid.
-
-“Maybe some criminal is somehow a VIX agent.”
-
-“Maybe someone didn't handle a case properly?”
-
-“Maybe someone asked for an increase in their salary?”
-
-The room erupts into laughter.
-
-Haha.
-
-I mean, most of the suggestions are stupid.
-
-Except the salary one.
-
-I return to my food and let the conversation continue around me.
-
-No one seems to have any actual information. Just guesses, rumours, and increasingly ridiculous explanations.
-
-Monday — 12 PM
-
-“Hey, I heard they've interrogated some people again,” Victor says.
-
-I glance up from my desk.
-
-The conversation is taking place a few seats away, but nobody seems concerned about keeping their voices down.
-
-“Yeah, I heard so from a friend of mine too. He got interrogated another time,” George replies.
-
-“Then that means VIX is probably suspecting more people,” Ryan joins in.
-
-I return to my work.
-
-Another round of interrogations.
-
-If they're questioning the same people again, they either haven't found what they're looking for or aren't satisfied with the answers.
-
-Neither possibility is reassuring.
-
-Still, I don't have enough information to draw any conclusions.
-
-Thursday — 12 PM
-
-“I think the situation's getting out of hand…” George begins as he bites into his sandwich.
-
-Adam looks at him.
-
-“What happened?”
-
-“You remember that friend of mine who was interrogated twice?”
-
-George pauses.
-
-“Fired.”
-
-The conversation falls silent.
-
-For a moment, nobody seems to know what to say.
-
-Then Ryan speaks.
-
-“Doesn't it mean it's getting in hand? I mean, whatever the problem was, they got rid of it. Your friend was the problem.”
-
-A few people exchange glances.
-
-George doesn't look convinced.
-
-Neither am I.
-
-Next Wednesday — 12 PM
-
-Adam walks into the break area.
-
-Something is wrong.
-
-I can't immediately put my finger on what it is, but he's quieter than usual. Normally, he's the sort of person who can turn an ordinary conversation into an event. He's talkative, energetic, and supportive.
-
-Today, he barely looks at anyone.
-
-Zane notices first.
-
-“Hey, Adam. Something wrong?”
-
-Adam looks up and nods.
-
-“My uncle…”
-
-His voice trembles.
-
-The room gradually quiets.
-
-“He lived in Asterra. Yesterday, I got news that he…”
-
-He stops.
-
-George leans forward slightly.
-
-“He…?”
-
-Adam draws a breath, as if he's trying to force himself to finish the sentence.
-
-Then he says it.
-
-“Was executed for espionage.”
-
-Nobody speaks.
-
-The word hangs in the air.
-
-I look at Adam.
-
-There are questions I want answered, but looking at his expression, I realise this probably isn't the time to ask them.
-
-Unfortunately, that realisation comes a little late.
-
-“On behalf of which country?” I ask.
-
-Every head turns towards me.
-
-I look at Zane.
-
-His expression tells me exactly what he thinks of my timing.
-
-Right. Not the question to ask when someone's just told you a family member has died.
-
-“Uh…” I clear my throat. “I mean, that's horrible. It's really sad. And devastating. So, condolences for your uncle on my behalf.”
-
-I manage to sound solemn.
-
-I think.
-
-The room's attention remains on me for another second or two before people begin offering their own condolences.
-
-After offering his condolences, Zane walks over to me.
-
-“‘On behalf of which country?’ Really?” he remarks.
-
-“I didn't think too much before asking,” I reply.
-
-“Which sounds wrong coming from you.”
-
-He shakes his head.
-
-Fair enough.
-
-“Though,” I continue, “try finding out what country he was spying for in your own socially graceful way.”
-
-Zane stares at me.
-
-“And why?” he asks, putting his hands in his pockets.
-
-I sigh.
-
-“You know. General knowledge.”
-
-“General knowledge? You can come up with a better excuse.”
-
-He walks away.
-
-I watch him go.
-
-General knowledge.
-
-Yeah, I can come up with a better excuse.`
+        file: "chapters/chapter-2.txt"
       }
     ];
 
     let currentChapter = 0;
-function updateChapterComments(attempt = 0) {
-  const iframe = document.querySelector("iframe.giscus-frame");
+    let loadNumber = 0;
 
-  if (iframe) {
-    iframe.contentWindow.postMessage(
-      {
-        giscus: {
-          setConfig: {
-            term: "facts-assumptions-chapter-" + (currentChapter + 1)
-          }
-        }
-      },
-      "https://giscus.app"
-    );
-  } else if (attempt < 20) {
-    setTimeout(() => updateChapterComments(attempt + 1), 500);
-  }
-}
-    function displayChapter() {
+    async function displayChapter() {
       const chapter = chapters[currentChapter];
+      const thisLoad = ++loadNumber;
 
-      document.getElementById("chapter-number").textContent =
+      const chapterNumber = document.getElementById("chapter-number");
+      const chapterTitle = document.getElementById("chapter-title");
+      const chapterContent = document.getElementById("chapter-content");
+      const previousButton = document.getElementById("previous");
+      const nextButton = document.getElementById("next");
+
+      chapterNumber.textContent =
         "CHAPTER " + (currentChapter + 1);
 
-      document.getElementById("chapter-title").textContent =
-        chapter.title;
+      chapterTitle.textContent = chapter.title;
+      chapterContent.textContent = "Loading chapter...";
 
-      document.getElementById("chapter-content").textContent =
-        chapter.content;
-
-      document.getElementById("previous").disabled =
-        currentChapter === 0;
-
-      document.getElementById("next").disabled =
-        currentChapter === chapters.length - 1;
+      previousButton.disabled = currentChapter === 0;
+      nextButton.disabled = currentChapter === chapters.length - 1;
 
       window.scrollTo(0, 0);
+
       updateChapterComments();
+
+      try {
+        const response = await fetch(chapter.file);
+
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status);
+        }
+
+        const text = await response.text();
+
+        // Ignore an older request if the reader has changed chapters.
+        if (thisLoad !== loadNumber) {
+          return;
+        }
+
+        chapterContent.textContent = text;
+      } catch (error) {
+        if (thisLoad !== loadNumber) {
+          return;
+        }
+
+        chapterContent.textContent =
+          "Sorry, this chapter couldn't be loaded. Please try again later.";
+
+        console.error("Chapter loading error:", error);
+      }
     }
+
+    function updateChapterComments(attempt = 0) {
+      const iframe = document.querySelector("iframe.giscus-frame");
+
+      if (iframe) {
+        iframe.contentWindow.postMessage(
+          {
+            giscus: {
+              setConfig: {
+                term:
+                  "facts-assumptions-chapter-" +
+                  (currentChapter + 1)
+              }
+            }
+          },
+          "https://giscus.app"
+        );
+      } else if (attempt < 20) {
+        setTimeout(
+          () => updateChapterComments(attempt + 1),
+          500
+        );
+      }
+    }
+
     function changeChapter(direction) {
       const nextChapter = currentChapter + direction;
 
-      if (nextChapter >= 0 && nextChapter < chapters.length) {
+      if (
+        nextChapter >= 0 &&
+        nextChapter < chapters.length
+      ) {
         currentChapter = nextChapter;
         displayChapter();
       }
