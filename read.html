@@ -140,7 +140,6 @@
   <main>
     <div class="story-title">Khayaal · Fiction</div>
 
-```
 <h1>Facts &amp; Assumptions</h1>
 
 <p id="chapter-number"></p>
@@ -157,7 +156,34 @@
     Next Chapter →
   </button>
 </div>
-```
+    <h2 style="margin-top: 55px; border-top: 1px solid #252d43; padding-top: 30px;">
+  Chapter Discussion
+</h2>
+
+<p style="color: #aab5d0; font-family: Arial, sans-serif; font-size: 14px;">
+  Share your thoughts and theories about this chapter.
+</p>
+
+<div id="giscus-comments"></div>
+
+<script
+  src="https://giscus.app/client.js"
+  data-repo="Azemya123/Khayaal"
+  data-repo-id="R_kgDOVMJ_6Q"
+  data-category="General"
+  data-category-id="DIC_kwDOVMJ_6c4DI16K"
+  data-mapping="specific"
+  data-term="facts-assumptions-chapter-1"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="dark_high_contrast"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script>
 
   </main>
 
@@ -668,7 +694,24 @@ Yeah, I can come up with a better excuse.`
     ];
 
     let currentChapter = 0;
+function updateChapterComments(attempt = 0) {
+  const iframe = document.querySelector("iframe.giscus-frame");
 
+  if (iframe) {
+    iframe.contentWindow.postMessage(
+      {
+        giscus: {
+          setConfig: {
+            term: "facts-assumptions-chapter-" + (currentChapter + 1)
+          }
+        }
+      },
+      "https://giscus.app"
+    );
+  } else if (attempt < 20) {
+    setTimeout(() => updateChapterComments(attempt + 1), 500);
+  }
+}
     function displayChapter() {
       const chapter = chapters[currentChapter];
 
@@ -688,8 +731,8 @@ Yeah, I can come up with a better excuse.`
         currentChapter === chapters.length - 1;
 
       window.scrollTo(0, 0);
+      updateChapterComments();
     }
-
     function changeChapter(direction) {
       const nextChapter = currentChapter + direction;
 
