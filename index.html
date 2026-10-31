@@ -1,23 +1,23 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101010">
+  <meta name="theme-color" content="#000000">
   <meta name="description" content="Khayaal — Where stories take shape. Discover Facts & Assumptions, an original serial story.">
 
   <title>Khayaal — Where Stories Take Shape</title>
 
   <style>
     :root {
-      --background: #101010;
-      --surface: #171717;
-      --surface-hover: #202020;
-      --text: #eeeae2;
-      --muted: #92908a;
-      --accent: #d8d4ca;
-      --line: #33322f;
+      --background: #000000;
+      --surface: #080808;
+      --surface-hover: #111111;
+      --text: #FFFFFF;
+      --muted: #A0A0A0;
+      --accent: #D0D0D0;
+      --line: #292929;
       --serif: Georgia, "Times New Roman", serif;
       --sans: Arial, Helvetica, sans-serif;
     }
@@ -30,7 +30,7 @@
 
     html {
       scroll-behavior: smooth;
-      scrollbar-color: #4a4945 var(--background);
+      scrollbar-color: #555555 var(--background);
     }
 
     body {
@@ -187,7 +187,7 @@
     .hero-button:hover {
       background: transparent;
       color: var(--text);
-      border-color: #66635c;
+      border-color: #555555;
     }
 
     .arrow {
@@ -239,7 +239,7 @@
     }
 
     .book-card:hover {
-      border-color: #5a5852;
+      border-color: #555555;
     }
 
     /* CSS-ONLY COVER */
@@ -253,13 +253,12 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background:
-        linear-gradient(
-          145deg,
-          #20201e 0%,
-          #151515 48%,
-          #101010 100%
-        );
+      background: linear-gradient(
+        145deg,
+        #111111 0%,
+        #050505 48%,
+        #000000 100%
+      );
       border-right: 1px solid var(--line);
       text-align: center;
     }
@@ -268,7 +267,7 @@
       content: "";
       position: absolute;
       inset: 17px;
-      border: 1px solid #33322f;
+      border: 1px solid var(--line);
       pointer-events: none;
     }
 
@@ -279,7 +278,7 @@
       left: 50%;
       width: 220px;
       height: 220px;
-      border: 1px solid #292824;
+      border: 1px solid #222222;
       border-radius: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
@@ -387,7 +386,7 @@
       margin-top: 35px;
       padding: 13px 0;
       border: none;
-      border-bottom: 1px solid #66635c;
+      border-bottom: 1px solid #555555;
       background: transparent;
       color: var(--text);
       cursor: pointer;
