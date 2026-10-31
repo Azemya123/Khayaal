@@ -1,21 +1,25 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0b1020">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="Khayaal — Where stories take shape. Discover Facts & Assumptions, an original serial story.">
 
   <title>Khayaal — Where Stories Take Shape</title>
 
   <style>
     :root {
-      --bg: #0b1020;
-      --panel: #111a2e;
-      --text: #f4f6fb;
-      --muted: #a6b0c5;
-      --silver: #c5cedd;
-      --border: #29344b;
-      --accent: #91a8d8;
+      --background: #101010;
+      --surface: #171717;
+      --surface-hover: #202020;
+      --text: #eeeae2;
+      --muted: #92908a;
+      --accent: #d8d4ca;
+      --line: #33322f;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
     }
 
     * {
@@ -26,17 +30,15 @@
 
     html {
       scroll-behavior: smooth;
+      scrollbar-color: #4a4945 var(--background);
     }
 
     body {
-      background: var(--bg);
+      background: var(--background);
       color: var(--text);
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.7;
-    }
-
-    button {
-      font: inherit;
+      font-family: var(--serif);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -44,302 +46,463 @@
       text-decoration: none;
     }
 
-    .container {
-      width: min(1050px, 90%);
-      margin: auto;
+    button {
+      font: inherit;
     }
 
+    .container {
+      width: min(100% - 48px, 1040px);
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
     header {
-      border-bottom: 1px solid var(--border);
-      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      background: var(--background);
     }
 
     .navbar {
       min-height: 78px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      justify-content: space-between;
+      gap: 24px;
     }
 
     .logo {
-      font-family: Arial, sans-serif;
-      font-size: 1.4rem;
-      font-weight: bold;
-      letter-spacing: 3px;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 12px;
+      font-family: var(--sans);
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      white-space: nowrap;
     }
 
-    .logo span {
-      color: var(--silver);
+    .logo-arabic {
+      color: var(--muted);
       font-family: serif;
-      font-size: 1.3rem;
+      font-size: 20px;
+      font-weight: 400;
       letter-spacing: 0;
     }
 
     nav {
       display: flex;
-      gap: 24px;
+      align-items: center;
+      gap: 32px;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    nav a {
       color: var(--muted);
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
+      transition: color 0.2s ease;
     }
 
     nav a:hover {
-      color: white;
+      color: var(--text);
     }
 
+    /* HERO */
+
     .hero {
-      min-height: 440px;
-      padding: 100px 0 90px;
+      min-height: 490px;
+      padding: 112px 0 105px;
+      display: flex;
+      align-items: center;
       text-align: center;
-      background:
-        radial-gradient(
-          ellipse at 50% 0%,
-          #1d2c4b 0%,
-          transparent 70%
-        );
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-inner {
+      width: 100%;
     }
 
     .eyebrow {
-      display: inline-block;
-      padding: 5px 13px;
-      border: 1px solid #465775;
-      border-radius: 30px;
-      color: var(--silver);
-      font-family: Arial, sans-serif;
-      font-size: 0.72rem;
-      letter-spacing: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 3px;
       text-transform: uppercase;
     }
 
-    h1 {
-      margin: 26px 0 18px;
-      font-size: clamp(2.8rem, 8vw, 5rem);
-      font-weight: normal;
-      line-height: 1.1;
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: 22px;
+      height: 1px;
+      background: var(--accent);
     }
 
-    h1 span {
-      color: var(--silver);
+    .hero h1 {
+      margin: 29px 0 22px;
+      font-size: clamp(48px, 8vw, 82px);
+      font-weight: 400;
+      letter-spacing: -3px;
+      line-height: 1.04;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
       font-style: italic;
+      font-weight: 400;
     }
 
-    .hero p {
-      max-width: 520px;
-      margin: auto;
+    .hero-description {
+      max-width: 420px;
+      margin: 0 auto;
       color: var(--muted);
-      font-size: 1.05rem;
+      font-size: 15px;
+      line-height: 1.9;
     }
 
     .hero-button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 25px;
-      border-radius: 5px;
-      background: var(--silver);
-      color: var(--bg);
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      transition: transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 34px;
+      padding: 14px 20px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: var(--background);
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .hero-button:hover {
-      transform: translateY(-3px);
+      background: transparent;
+      color: var(--text);
+      border-color: #66635c;
     }
 
+    .arrow {
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    /* FEATURED STORY */
+
     .featured {
-      padding: 65px 0 95px;
+      padding-top: 88px;
+      padding-bottom: 105px;
     }
 
     .section-heading {
-      margin-bottom: 35px;
-      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-kicker {
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
     .section-heading h2 {
-      font-size: 2.2rem;
-      font-weight: normal;
+      font-size: clamp(31px, 5vw, 43px);
+      font-weight: 400;
+      letter-spacing: -1px;
+      line-height: 1.2;
     }
 
     .section-heading p {
-      margin-top: 8px;
+      margin-top: 12px;
       color: var(--muted);
+      font-size: 14px;
     }
 
     .book-card {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      max-width: 780px;
-      margin: auto;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--panel);
-      transition: border-color 0.2s;
+      grid-template-columns: 0.95fr 1.05fr;
+      max-width: 900px;
+      margin: 0 auto;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      transition: border-color 0.25s ease;
     }
 
     .book-card:hover {
-      border-color: #647798;
+      border-color: #5a5852;
     }
 
+    /* CSS-ONLY COVER */
+
     .book-cover {
-      min-height: 350px;
-      padding: 30px;
+      position: relative;
+      min-height: 410px;
+      padding: 35px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
+      overflow: hidden;
       background:
-        radial-gradient(
-          ellipse at 50% 40%,
-          #263653 0%,
-          #111a2e 70%
+        linear-gradient(
+          145deg,
+          #20201e 0%,
+          #151515 48%,
+          #101010 100%
         );
-      border-right: 1px solid var(--border);
+      border-right: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .book-cover::before {
+      content: "";
+      position: absolute;
+      inset: 17px;
+      border: 1px solid #33322f;
+      pointer-events: none;
+    }
+
+    .book-cover::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 220px;
+      height: 220px;
+      border: 1px solid #292824;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .cover-content {
+      position: relative;
+      z-index: 1;
     }
 
     .cover-label {
-      margin-bottom: 24px;
-      color: var(--silver);
-      font-family: Arial, sans-serif;
-      font-size: 0.65rem;
+      margin-bottom: 38px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 9px;
       letter-spacing: 3px;
       text-transform: uppercase;
     }
 
     .book-cover h3 {
-      font-size: clamp(1.8rem, 4vw, 2.7rem);
-      font-weight: normal;
+      font-size: clamp(28px, 4vw, 39px);
+      font-weight: 400;
       letter-spacing: 2px;
-      line-height: 1.25;
+      line-height: 1.3;
     }
 
     .cover-line {
-      width: 55px;
+      width: 42px;
       height: 1px;
-      margin-top: 25px;
-      background: var(--silver);
+      margin: 30px auto 20px;
+      background: var(--accent);
     }
 
+    .cover-author {
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* STORY INFORMATION */
+
     .book-info {
-      padding: 35px 30px;
+      padding: 52px 42px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: flex-start;
+      justify-content: center;
     }
 
     .book-info .label {
-      margin-bottom: 12px;
-      color: var(--silver);
-      font-family: Arial, sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 2px;
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
     }
 
     .book-info h3 {
-      margin-bottom: 15px;
-      font-size: 1.8rem;
-      font-weight: normal;
-      line-height: 1.3;
+      margin-bottom: 20px;
+      font-size: clamp(27px, 4vw, 36px);
+      font-weight: 400;
+      letter-spacing: -0.8px;
+      line-height: 1.2;
     }
 
     .book-info p {
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 15px;
+      line-height: 1.95;
+    }
+
+    .story-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      margin-top: 26px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .story-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .story-meta span::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
     }
 
     .book-button {
-      margin-top: 25px;
-      padding: 11px 22px;
-      border: 1px solid #647798;
-      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 35px;
+      padding: 13px 0;
+      border: none;
+      border-bottom: 1px solid #66635c;
       background: transparent;
       color: var(--text);
       cursor: pointer;
-      transition: background 0.2s;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s ease, border-color 0.2s ease;
     }
 
     .book-button:hover {
-      background: #1c2941;
+      color: var(--accent);
+      border-color: var(--accent);
     }
 
+    .book-button span {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    /* ABOUT */
+
     .about {
-      padding: 65px 0;
-      border-top: 1px solid var(--border);
-      background: #0e1526;
+      padding: 78px 0 85px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
       text-align: center;
+    }
+
+    .about .eyebrow {
+      margin-bottom: 24px;
     }
 
     .about h2 {
-      margin-bottom: 12px;
-      font-size: 2rem;
-      font-weight: normal;
+      margin-bottom: 18px;
+      font-size: clamp(30px, 5vw, 43px);
+      font-weight: 400;
+      letter-spacing: -1px;
     }
 
     .about p {
-      max-width: 550px;
-      margin: auto;
+      max-width: 510px;
+      margin: 0 auto;
       color: var(--muted);
+      font-size: 15px;
+      line-height: 2;
     }
+
+    /* FOOTER */
 
     footer {
-      padding: 25px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-family: Arial, sans-serif;
-      font-size: 0.8rem;
-      text-align: center;
+      padding: 29px 0;
     }
 
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 10;
-      padding: 20px;
-      justify-content: center;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.8);
-    }
-
-    .modal.open {
+    .footer-inner {
       display: flex;
-    }
-
-    .modal-content {
-      width: min(430px, 100%);
-      padding: 30px;
-      border: 1px solid #465775;
-      border-radius: 8px;
-      background: var(--panel);
-    }
-
-    .modal-content h2 {
-      margin-bottom: 12px;
-      font-size: 1.6rem;
-      font-weight: normal;
-    }
-
-    .modal-content p {
-      margin-bottom: 22px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
       color: var(--muted);
+      font-family: var(--sans);
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
     }
 
-    .close-button {
-      padding: 10px 18px;
-      border: none;
-      border-radius: 5px;
-      background: var(--silver);
-      color: var(--bg);
-      cursor: pointer;
+    .footer-brand {
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: 3px;
     }
 
-    @media (max-width: 650px) {
+    /* RESPONSIVE */
+
+    @media (max-width: 700px) {
+      .container {
+        width: calc(100% - 40px);
+      }
+
+      .navbar {
+        min-height: 70px;
+      }
+
+      .logo {
+        gap: 8px;
+        font-size: 16px;
+        letter-spacing: 3px;
+      }
+
+      .logo-arabic {
+        font-size: 18px;
+      }
+
+      nav {
+        gap: 17px;
+        font-size: 10px;
+      }
+
       .hero {
-        padding: 75px 0;
+        min-height: auto;
+        padding: 90px 0 85px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.8px;
+      }
+
+      .featured {
+        padding-top: 65px;
+        padding-bottom: 75px;
+      }
+
+      .section-heading {
+        margin-bottom: 30px;
       }
 
       .book-card {
@@ -347,25 +510,76 @@
       }
 
       .book-cover {
-        min-height: 300px;
+        min-height: 340px;
         border-right: none;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--line);
       }
 
       .book-info {
-        padding: 28px;
+        padding: 35px 28px 38px;
+      }
+
+      .about {
+        padding: 65px 0;
       }
     }
 
-    @media (max-width: 380px) {
+    @media (max-width: 400px) {
+      .container {
+        width: calc(100% - 32px);
+      }
+
       .logo {
-        font-size: 1.1rem;
+        font-size: 14px;
         letter-spacing: 2px;
+      }
+
+      .logo-arabic {
+        font-size: 16px;
       }
 
       nav {
         gap: 12px;
-        font-size: 0.8rem;
+        font-size: 9px;
+      }
+
+      .eyebrow {
+        font-size: 9px;
+        letter-spacing: 2px;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .book-cover {
+        min-height: 310px;
+      }
+
+      .book-info {
+        padding: 30px 23px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -375,8 +589,8 @@
 
   <header>
     <div class="container navbar">
-      <a class="logo" href="#" aria-label="Khayaal homepage">
-        KHAYAAL <span>خیال</span>
+      <a class="logo" href="index.html" aria-label="Khayaal homepage">
+        KHAYAAL <span class="logo-arabic" lang="ar" dir="rtl">خيال</span>
       </a>
 
       <nav aria-label="Main navigation">
@@ -389,14 +603,21 @@
   <main>
 
     <section class="hero">
-      <div class="container">
-        <span class="eyebrow">Enter the unknown</span>
+      <div class="container hero-inner">
+        <span class="eyebrow">A space for stories</span>
 
-        <h1>Where stories<br><span>take shape.</span></h1>
+        <h1>
+          Where stories<br>
+          <span>take shape.</span>
+        </h1>
 
+        <p class="hero-description">
+          Every story begins with an idea.
+          Some leave you with more questions than answers.
+        </p>
 
         <a class="hero-button" href="#featured">
-          Discover the story
+          Discover the story <span class="arrow">→</span>
         </a>
       </div>
     </section>
@@ -404,6 +625,7 @@
     <section class="featured container" id="featured">
 
       <div class="section-heading">
+        <p class="section-kicker">Selected reading</p>
         <h2>The Story</h2>
         <p>One story. A world waiting to be uncovered.</p>
       </div>
@@ -411,29 +633,38 @@
       <article class="book-card">
 
         <div class="book-cover">
-          <span class="cover-label">A Khayaal original</span>
+          <div class="cover-content">
+            <p class="cover-label">A Khayaal original</p>
 
-          <h3>
-            FACTS<br>
-            &amp;<br>
-            ASSUMPTIONS
-          </h3>
+            <h3>
+              FACTS<br>
+              &amp;<br>
+              ASSUMPTIONS
+            </h3>
 
-          <div class="cover-line"></div>
+            <div class="cover-line"></div>
+
+            <p class="cover-author">An original story</p>
+          </div>
         </div>
 
         <div class="book-info">
-          <span class="label">An original story</span>
+          <p class="label">The featured story</p>
 
-          <h3>Facts and Assumptions</h3>
+          <h3>Facts &amp;<br>Assumptions</h3>
 
           <p>
             Every answer creates another question.
             And not every conclusion is what it seems.
           </p>
 
-          <button class="book-button" id="readButton">
-            Enter the story →
+          <div class="story-meta">
+            <span>Serial fiction</span>
+            <span>Read online</span>
+          </div>
+
+          <button class="book-button" id="readButton" type="button">
+            Enter the story <span>→</span>
           </button>
         </div>
 
@@ -442,11 +673,15 @@
 
     <section class="about" id="about">
       <div class="container">
-        <h2>Welcome to Khayaal.</h2>
+        <p class="eyebrow">The idea behind Khayaal</p>
+
+        <h2>More than just a story.</h2>
 
         <p>
-          A space built around stories, ideas, and the questions
-          that stay with us long after the last page.
+          Khayaal is a space built around stories, ideas, and the
+          questions that stay with us long after the last page.
+          A place where imagination takes form and every detail
+          might mean something more.
         </p>
       </div>
     </section>
@@ -454,15 +689,18 @@
   </main>
 
   <footer>
-    <div class="container">
-      Khayaal خیال · Where stories take shape.
+    <div class="container footer-inner">
+      <span class="footer-brand">KHAYAAL · خيال</span>
+      <span>Where stories take shape</span>
     </div>
   </footer>
-<script>
-  document.getElementById("readButton").addEventListener("click", () => {
-    window.location.href = "read.html";
-  });
-</script>
+
+  <script>
+    document.getElementById("readButton").addEventListener("click", function () {
+      window.location.href = "read.html";
+    });
+  </script>
 
 </body>
 </html>
+```
