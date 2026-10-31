@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,92 +6,227 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Facts &amp; Assumptions — Khayaal</title>
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="Read Facts & Assumptions on Khayaal, where stories take shape.">
 
   <style>
+    :root {
+      --background: #101010;
+      --surface: #171717;
+      --surface-hover: #202020;
+      --text: #eeeae2;
+      --muted: #92908a;
+      --line: #33322f;
+      --accent: #d8d4ca;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scrollbar-color: #4a4945 var(--background);
+    }
+
     body {
       margin: 0;
-      background: #0b1020;
-      color: #e8eaf0;
-      font-family: Georgia, "Times New Roman", serif;
+      background: var(--background);
+      color: var(--text);
+      font-family: var(--serif);
       line-height: 1.9;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
     }
 
     header {
-      padding: 22px;
-      border-bottom: 1px solid #252d43;
-      font-family: Arial, sans-serif;
+      min-height: 78px;
+      padding: 0 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--line);
+      font-family: var(--sans);
     }
 
-    header a {
-      color: #c4c9d8;
+    .brand {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 5px;
       text-decoration: none;
     }
 
-    header a:hover {
-      color: #ffffff;
+    .brand span {
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .back-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.7px;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--text);
     }
 
     main {
-      max-width: 760px;
-      margin: 55px auto;
-      padding: 0 24px;
+      width: min(100% - 44px, 760px);
+      margin: 0 auto;
+      padding: 82px 0 50px;
     }
 
-    .story-title {
-      color: #aab5d0;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
+    .story-header {
+      padding-bottom: 43px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
     }
 
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+
     h1 {
-      font-size: clamp(30px, 6vw, 46px);
-      line-height: 1.25;
-      margin-bottom: 8px;
+      max-width: 650px;
+      margin: 0;
+      font-size: clamp(38px, 7vw, 66px);
+      font-weight: 400;
+      letter-spacing: -2px;
+      line-height: 1.08;
+    }
+
+    .story-subtitle {
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .story-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-top: 35px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .status::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .chapter-header {
+      padding: 53px 0 25px;
     }
 
     #chapter-number {
-      color: #aab5d0;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      margin-top: 30px;
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
     #chapter-title {
-      font-size: 27px;
-      margin-bottom: 35px;
+      margin: 0;
+      font-size: clamp(27px, 5vw, 38px);
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+    }
+
+    .chapter-rule {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 23px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .chapter-rule::after {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: var(--line);
     }
 
     #chapter-content {
-      font-size: 19px;
-      line-height: 1.9;
+      min-height: 150px;
+      padding: 10px 0 35px;
+      color: #e1ded7;
+      font-size: 18px;
+      line-height: 2.05;
       white-space: pre-wrap;
       overflow-wrap: anywhere;
-      min-height: 100px;
     }
 
     .navigation {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      margin-top: 55px;
-      padding-top: 25px;
-      border-top: 1px solid #252d43;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 24px;
+      padding: 24px 0 45px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     button {
-      background: #171f35;
-      color: #e8eaf0;
-      border: 1px solid #39445f;
-      border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 14px;
+      min-height: 75px;
+      padding: 15px 18px;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 0;
       cursor: pointer;
+      text-align: left;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    button:hover:not(:disabled) {
+      background: var(--surface-hover);
+      border-color: #66635c;
     }
 
     button:disabled {
@@ -99,38 +234,119 @@
       cursor: not-allowed;
     }
 
-    button:not(:disabled):hover {
-      background: #25314d;
+    .button-label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .button-title {
+      display: block;
+      font-family: var(--serif);
+      font-size: 15px;
+    }
+
+    #next {
+      text-align: right;
+    }
+
+    .discussion {
+      padding-top: 62px;
+    }
+
+    .discussion-kicker {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
     .discussion-title {
-      margin-top: 55px;
-      border-top: 1px solid #252d43;
-      padding-top: 30px;
+      margin: 0;
+      font-size: clamp(28px, 5vw, 38px);
+      font-weight: 400;
+      letter-spacing: -0.7px;
     }
 
     .discussion-description {
-      color: #aab5d0;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
+      max-width: 450px;
+      margin: 13px 0 30px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    #giscus-comments {
+      min-height: 100px;
     }
 
     footer {
-      text-align: center;
-      padding: 30px;
-      color: #929bb0;
-      font-family: Arial, sans-serif;
-      font-size: 12px;
+      margin-top: 65px;
+      padding: 27px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
-    @media (max-width: 480px) {
+    .footer-brand {
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    @media (max-width: 540px) {
+      header {
+        min-height: 68px;
+        padding: 0 22px;
+      }
+
+      .brand {
+        font-size: 16px;
+        letter-spacing: 4px;
+      }
+
+      .back-link {
+        font-size: 11px;
+      }
+
       main {
-        margin: 35px auto;
-        padding: 0 18px;
+        width: calc(100% - 40px);
+        padding-top: 57px;
+      }
+
+      .story-header {
+        padding-bottom: 32px;
+      }
+
+      h1 {
+        letter-spacing: -1.3px;
+      }
+
+      .story-meta {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
+      .chapter-header {
+        padding-top: 42px;
       }
 
       #chapter-content {
         font-size: 17px;
+        line-height: 1.95;
       }
 
       .navigation {
@@ -138,8 +354,39 @@
       }
 
       button {
-        padding: 11px 12px;
-        font-size: 12px;
+        min-height: 72px;
+        padding: 12px 10px;
+      }
+
+      .button-title {
+        font-size: 13px;
+      }
+
+      .button-label {
+        font-size: 8px;
+        letter-spacing: 1px;
+      }
+
+      .discussion {
+        padding-top: 46px;
+      }
+
+      footer {
+        padding: 24px 20px;
+        font-size: 8px;
+        letter-spacing: 1px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -147,59 +394,66 @@
 
 <body>
   <header>
-    <a href="index.html">← Back to Khayaal</a>
+    <a class="brand" href="index.html">K<span>H</span>AYAAL</a>
+    <a class="back-link" href="index.html">← Back to library</a>
   </header>
 
   <main>
-    <div class="story-title">Khayaal · Fiction</div>
+    <section class="story-header">
+      <p class="eyebrow">Khayaal · Fiction</p>
 
-    <h1>Facts &amp; Assumptions</h1>
+      <h1>Facts &amp;<br>Assumptions</h1>
 
-    <p id="chapter-number">CHAPTER 1</p>
+      <p class="story-subtitle">
+        The difference between what is known and what is believed.
+      </p>
 
-    <h2 id="chapter-title">The Beginning</h2>
+      <div class="story-meta">
+        <span>Serial fiction</span>
+        <span class="status">Reading room</span>
+      </div>
+    </section>
 
-    <article id="chapter-content" aria-live="polite">Loading chapter...</article>
+    <section aria-label="Chapter">
+      <div class="chapter-header">
+        <p id="chapter-number">CHAPTER 01</p>
+        <h2 id="chapter-title">The Beginning</h2>
+        <div class="chapter-rule">BEGIN READING</div>
+      </div>
 
-    <div class="navigation">
-      <button id="previous" onclick="changeChapter(-1)" disabled>
-        ← Previous Chapter
-      </button>
+      <article id="chapter-content" aria-live="polite">
+        Loading chapter...
+      </article>
 
-      <button id="next" onclick="changeChapter(1)">
-        Next Chapter →
-      </button>
-    </div>
+      <nav class="navigation" aria-label="Chapter navigation">
+        <button id="previous" onclick="changeChapter(-1)" disabled>
+          <span class="button-label">← Previous</span>
+          <span class="button-title">Beginning of story</span>
+        </button>
 
-    <h2 class="discussion-title">Chapter Discussion</h2>
+        <button id="next" onclick="changeChapter(1)">
+          <span class="button-label">Next →</span>
+          <span class="button-title">Next chapter</span>
+        </button>
+      </nav>
+    </section>
 
-    <p class="discussion-description">
-      Share your thoughts and theories about this chapter.
-    </p>
+    <section class="discussion">
+      <p class="discussion-kicker">The conversation continues</p>
+      <h2 class="discussion-title">Chapter Discussion</h2>
 
-    <div id="giscus-comments"></div>
+      <p class="discussion-description">
+        Share your interpretations, discuss the evidence, and leave your theories.
+      </p>
+
+      <div id="giscus-comments"></div>
+    </section>
   </main>
 
-  <footer>KHAYAAL — WHERE STORIES TAKE SHAPE</footer>
-
-  <script
-    src="https://giscus.app/client.js"
-    data-repo="Azemya123/Khayaal"
-    data-repo-id="R_kgDOVMJ_6Q"
-    data-category="General"
-    data-category-id="DIC_kwDOVMJ_6c4DI16K"
-    data-mapping="specific"
-    data-term="facts-assumptions-chapter-1"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="top"
-    data-theme="dark_high_contrast"
-    data-lang="en"
-    data-loading="lazy"
-    crossorigin="anonymous"
-    async>
-  </script>
+  <footer>
+    <span class="footer-brand">KHAYAAL</span>
+    <span>Where stories take shape</span>
+  </footer>
 
   <script>
     const chapters = [
@@ -222,7 +476,17 @@
       { title: "Chapter 17", file: "chapters/chapter-17.txt" },
       { title: "Chapter 18", file: "chapters/chapter-18.txt" },
       { title: "Chapter 19", file: "chapters/chapter-19.txt" },
-      { title: "Chapter 20", file: "chapters/chapter-20.txt" }
+      { title: "Chapter 20", file: "chapters/chapter-20.txt" },
+      { title: "Chapter 21", file: "chapters/chapter-21.txt" },
+      { title: "Chapter 22", file: "chapters/chapter-22.txt" },
+      { title: "Chapter 23", file: "chapters/chapter-23.txt" },
+      { title: "Chapter 24", file: "chapters/chapter-24.txt" },
+      { title: "Chapter 25", file: "chapters/chapter-25.txt" },
+      { title: "Chapter 26", file: "chapters/chapter-26.txt" },
+      { title: "Chapter 27", file: "chapters/chapter-27.txt" },
+      { title: "Chapter 28", file: "chapters/chapter-28.txt" },
+      { title: "Chapter 29", file: "chapters/chapter-29.txt" },
+      { title: "Chapter 30", file: "chapters/chapter-30.txt" }
     ];
 
     let currentChapter = 0;
@@ -238,14 +502,26 @@
       const previousButton = document.getElementById("previous");
       const nextButton = document.getElementById("next");
 
-      chapterNumber.textContent = "CHAPTER " + (currentChapter + 1);
+      chapterNumber.textContent =
+        "CHAPTER " + String(currentChapter + 1).padStart(2, "0");
+
       chapterTitle.textContent = chapter.title;
       chapterContent.textContent = "Loading chapter...";
 
       previousButton.disabled = currentChapter === 0;
       nextButton.disabled = currentChapter === chapters.length - 1;
 
-      window.scrollTo(0, 0);
+      previousButton.querySelector(".button-title").textContent =
+        currentChapter === 0
+          ? "Beginning of story"
+          : chapters[currentChapter - 1].title;
+
+      nextButton.querySelector(".button-title").textContent =
+        currentChapter === chapters.length - 1
+          ? "End of story"
+          : chapters[currentChapter + 1].title;
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
 
       updateChapterComments();
 
@@ -258,7 +534,6 @@
 
         const text = await response.text();
 
-        // Ignore an older request if the reader has changed chapters.
         if (thisLoad !== loadNumber) {
           return;
         }
@@ -270,7 +545,7 @@
         }
 
         chapterContent.textContent =
-          "Sorry, this chapter couldn't be loaded. Please try again later.";
+          "This chapter is not available yet. Please check back later.";
 
         console.error("Chapter loading error:", error);
       }
@@ -308,6 +583,25 @@
     }
 
     displayChapter();
+  </script>
+
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="Azemya123/Khayaal"
+    data-repo-id="R_kgDOVMJ_6Q"
+    data-category="General"
+    data-category-id="DIC_kwDOVMJ_6c4DI16K"
+    data-mapping="specific"
+    data-term="facts-assumptions-chapter-1"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="dark_high_contrast"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
   </script>
 </body>
 </html>
